@@ -15,9 +15,16 @@ jobs:
           if [ -f ~/.npmrc ]; then
             rm -f ~/.npmrc
           fi
+     
+      - name: Debug Environment
+        run: |
+          echo "Checking for .npmrc file..."
+          ls -la ~/.npmrc || echo "No .npmrc file found"
 
       - name: Install Dependencies
         run: npm install
 
       - run: npm run test
       - run: npm start
+
+
