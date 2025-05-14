@@ -10,8 +10,14 @@ jobs:
           node-version: '22.15'
           cache: npm
 
+      - name: Clear NPM Authentication
+        run: |
+          if [ -f ~/.npmrc ]; then
+            rm -f ~/.npmrc
+          fi
+
       - name: Install Dependencies
         run: npm install
-        
+
       - run: npm run test
       - run: npm start
