@@ -3,15 +3,19 @@ on:
   pull_request:
     branches:
       - develop
-      
+
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 20, 21, 22, 24]
+    name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.15'
+          node-version: ${{ matrix.node }}
     
       - name: Install Dependencies
         run: yarn install
