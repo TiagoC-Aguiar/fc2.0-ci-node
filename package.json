@@ -1,9 +1,10 @@
 {
   "name": "fc2-ci001",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "math.jest.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "node math.js"
   },
   "keywords": [],
   "author": "",
