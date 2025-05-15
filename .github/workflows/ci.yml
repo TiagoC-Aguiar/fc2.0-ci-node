@@ -25,7 +25,6 @@ jobs:
   
   publish-application:
     runs-on: ubuntu-latest
-    name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
