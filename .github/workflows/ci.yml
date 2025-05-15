@@ -23,4 +23,15 @@ jobs:
       - run: yarn test
       - run: yarn start
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          tags: tiagocaguiar/fc2.0-ci-node:latest
 
